@@ -17,13 +17,13 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '9b0821648272ab4d9ee26ff893957fd4c1aa746bbe4f8d4996805dddc5ea5b6fc4197bcda510e5e73bc394b0188c52abd31f58e4e34982f4bc246b66356e9bfe'
   # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'public_profile,email'
-  config.omniauth :facebook, "521683279193449", "7ef5948993204de9d969795c19748b", callback_url: "https://shrouded-crag-34498.herokuapp.com/users/auth/facebook/callback"
+  config.omniauth :facebook, "521683279193449", "7ef5948993204de9d969795c19748b", callback_url: "https://taskrail.herokuapp.com/users/auth/facebook/callback"
   # config.omniauth :facebook, "135761675263912", "51d81fdd3a883dfcd28e51e1b56b040b", token_params: { parse: :json }
-  config.omniauth :linkedin, "78udy7vdxud6p9", "19HJu6pHTdSaHn7e", callback_url: "https://shrouded-crag-34498.herokuapp.com/users/auth/linkedin/callback"
+  config.omniauth :linkedin, "78fn677zt4bn72", "QSHt5rG92IAp2RcH", callback_url: "https://taskrail.herokuapp.com/users/auth/linkedin/callback"
 
-  config.omniauth :spotify, "d9ed75bf08f04f88aef8976c2a21baa7", "7ed5df5bc3484d0ba7cf1ebe54112b39", callback_url: "https://shrouded-crag-34498.herokuapp.com/users/auth/spotify/callback"
+  config.omniauth :spotify, "d9ed75bf08f04f88aef8976c2a21baa7", "7ed5df5bc3484d0ba7cf1ebe54112b39", callback_url: "https://taskrail.herokuapp.com/users/auth/spotify/callback"
 
-  config.omniauth :google_oauth2, "206635640950-1kdqqfqpv2ajltcoguar9977hcoh8evb.apps.googleusercontent.com", "tbZ1UDnHasBg58vcES1F5jjm", callback_url: "https://shrouded-crag-34498.herokuapp.com/users/auth/google/callback"
+  config.omniauth :google_oauth2, "206635640950-1kdqqfqpv2ajltcoguar9977hcoh8evb.apps.googleusercontent.com", "tbZ1UDnHasBg58vcES1F5jjm", callback_url: "https://taskrail.herokuapp.com/users/auth/google/callback"
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
