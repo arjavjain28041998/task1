@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  skip_before_action :verify_authenticity_token, :only => [:facebook, :linkedin, :spotify, :google_oauth2]
+  skip_before_action :verify_authenticity_token, :only => [:facebook, :linkedin, :google_oauth2, :spotify]
 
   def spotify
     @user = User.from_omniauth(request.env["omniauth.auth"])
