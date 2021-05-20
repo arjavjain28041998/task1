@@ -17,7 +17,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '9b0821648272ab4d9ee26ff893957fd4c1aa746bbe4f8d4996805dddc5ea5b6fc4197bcda510e5e73bc394b0188c52abd31f58e4e34982f4bc246b66356e9bfe'
   # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'public_profile,email'
-  config.omniauth :facebook, "521683279193449", "7ef5948993204de9d969795c19748b", callback_url: "https://taskrail.herokuapp.com/users/auth/facebook/callback"
+  config.omniauth :facebook, "521683279193449", "2471729808b6328e56de9921621de3b3", callback_url: "https://taskrail.herokuapp.com/users/auth/facebook/callback"
   # config.omniauth :facebook, "135761675263912", "51d81fdd3a883dfcd28e51e1b56b040b", token_params: { parse: :json }
   config.omniauth :linkedin, "78fn677zt4bn72", "QSHt5rG92IAp2RcH", callback_url: "https://taskrail.herokuapp.com/users/auth/linkedin/callback"
 
