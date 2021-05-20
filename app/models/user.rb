@@ -44,4 +44,15 @@ class User < ApplicationRecord
     end
   end
  end
+
+ def after_sign_in_path_for(resource)
+    stored_location_for(resource) ||
+
+    if resource.preferred_page.present?
+      preferred_page_path(resource)
+    else
+      super
+    end
+    # redirect_to root_path
+  end
 end
