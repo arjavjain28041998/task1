@@ -10,7 +10,7 @@ class User < ApplicationRecord
      user.password = Devise.friendly_token[0, 20]
      user.name = auth.info.name 
      user.image = auth.info.image 
-     user.skip_confirmation!
+     
    end
  end
 
@@ -45,14 +45,5 @@ class User < ApplicationRecord
   end
  end
 
- def after_sign_in_path_for(resource)
-    stored_location_for(resource) ||
-
-    if resource.preferred_page.present?
-      preferred_page_path(resource)
-    else
-      super
-    end
-    # redirect_to root_path
-  end
+ 
 end
