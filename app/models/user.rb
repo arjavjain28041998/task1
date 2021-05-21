@@ -4,23 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook linkedin spotify google_oauth2]
 
-  def self.from_omniauth(auth)
-  if self.where(email: auth.info.email).exists?
-    return_user = self.where(email: auth.info.email).first
-    return_user.provider = auth.provider
-    return_user.uid = auth.uid
-  else
-    return_user = self.create do |user|
-       user.provider = auth.provider
-       user.uid = auth.uid
-       user.name = auth.info.name
-       user.username = auth.info.username
-       user.email = auth.info.email
-       
-    end
-  end
-  return_user
-end
+ def self.from_omniauth(auth)
+   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+     user.email = auth.info.email
+     user.password = Devise.friendly_token[0, 20]
+     user.name = auth.info.name   
+     user.image = auth.info.image
+     user.skip_confirmation!
+   end
+ end
 
 
  def self.new_with_session(params, session)
