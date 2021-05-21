@@ -16,9 +16,6 @@ class User < ApplicationRecord
        user.name = auth.info.name
        user.username = auth.info.username
        user.email = auth.info.email
-       user.oauth_token = auth.credentials.token
-       user.oauth_expires_at = Time.at(auth.credentials.expires_at) 
-    end
   end
   return_user
 end
