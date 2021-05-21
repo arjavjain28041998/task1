@@ -80,7 +80,7 @@ input {
         height: 50px;
         width: 50px;
         left: 302px;
-        top: -29px
+        top: -29px;
     }
 }
 
@@ -89,8 +89,9 @@ input {
         display: none
     }
  .container {
-        margin-left: 0px;
-        margin-top: 30px
+        margin: 10% 30% 0% 30%;
+
+        
     }
 
     #circle {
