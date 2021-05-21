@@ -16,6 +16,8 @@ class User < ApplicationRecord
        user.name = auth.info.name
        user.username = auth.info.username
        user.email = auth.info.email
+       
+    end
   end
   return_user
 end
