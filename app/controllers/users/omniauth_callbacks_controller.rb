@@ -9,8 +9,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "Spotify") if is_navigational_format?
     else
-      session["devise.spotify_data"] = request.env["omniauth.auth"].except(:extra) 
-      redirect_to new_user_registration_url
+      user = User.find_by(email: @user.email)
+      if user.present?
+        sign_in_and_redirect user , event: :authentication
+      else
+        session["devise.google_data"] = request.env["omniauth.auth"].except(:extra) 
+        redirect_to new_user_registration_url
+      end
     end
   end
 
@@ -21,8 +26,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication # this will throw if @user is not activated
       set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
     else
-      session["devise.facebook_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
-      redirect_to new_user_registration_url
+      user = User.find_by(email: @user.email)
+      if user.present?
+        sign_in_and_redirect user , event: :authentication
+      else
+        session["devise.google_data"] = request.env["omniauth.auth"].except(:extra) 
+        redirect_to new_user_registration_url
+      end
     end
   end
 
@@ -32,8 +42,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "Linkedin") if is_navigational_format?
     else
-      session["devise.linkedin_data"] = request.env["omniauth.auth"].except(:extra) 
-      redirect_to new_user_registration_url
+     user = User.find_by(email: @user.email)
+      if user.present?
+        sign_in_and_redirect user , event: :authentication
+      else
+        session["devise.google_data"] = request.env["omniauth.auth"].except(:extra) 
+        redirect_to new_user_registration_url
+      end
     end
   end
 
