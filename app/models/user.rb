@@ -46,5 +46,7 @@ class User < ApplicationRecord
   end
  end
 
- 
+ def failure
+
+ end
 end
