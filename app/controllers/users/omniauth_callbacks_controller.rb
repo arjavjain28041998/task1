@@ -49,7 +49,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    redirect_to root_path
+    set_flash_message["The email is already taken"]
+    redirect_to 'home/index'
     
   end
 end
