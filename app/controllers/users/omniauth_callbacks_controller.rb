@@ -50,7 +50,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     set_flash_message["The email is already taken"]
-    redirect_to 'home/index'
-    
+
+     redirect_to new_user_registration_url
   end
 end
